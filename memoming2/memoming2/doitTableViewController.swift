@@ -13,17 +13,17 @@ class doitTableViewController: UIViewController {
     let firstdoitlabel = UILabel()
     let seconddoitlabel = UILabel()
     let thriddoitlabel = UILabel()
-    let redimage = UIImageView()
-    let blueimage = UIImageView()
-    let redimage2 = UIImageView()
-    let blueimage2 = UIImageView()
+    let redimage = UIButton(type: .custom)
+    let blueimage = UIButton(type: .custom)
+    let redimage2 = UIButton(type: .custom)
+    let blueimage2 = UIButton(type: .custom)
     let redlineimage = UIImageView()
     let bluelineimage = UIImageView()
     let redlineimage2 = UIImageView()
     let bluelineimage2 = UIImageView()
     let checkButton = UIButton(type: .custom)
     let checkButton2 = UIButton(type: .custom)
-    let deleteButton = UIButton(type: .system)
+    let deleteButton = UIButton(type: .custom)
     
     
     override func viewDidLoad() {
@@ -37,11 +37,11 @@ extension doitTableViewController {
         UserDefaults.standard.set(text, forKey: "doitlabel")
     }
     func save2(text: String) {
-      UserDefaults.standard.set(text, forKey: "doitlabel2")
-  }
+        UserDefaults.standard.set(text, forKey: "doitlabel2")
+    }
     func save3(text: String) {
-      UserDefaults.standard.set(text, forKey: "doitlabel3")
-  }
+        UserDefaults.standard.set(text, forKey: "doitlabel3")
+    }
     private  func load() -> String {
         let text = UserDefaults.standard.string(forKey: "doitlabel") ?? ""
         return text
@@ -55,7 +55,6 @@ extension doitTableViewController {
         UserDefaults.standard.set("", forKey: "doitlabel3")
     }
 }
-
 extension doitTableViewController {
     @objc func didTapMemoPlus(_ sender: UIButton){
         let nextVC = adddoitViewController()
@@ -63,13 +62,12 @@ extension doitTableViewController {
         self.present(nextVC, animated: true,completion: nil)
     }
 }
-
 extension doitTableViewController: InputTextDelegate2 {
     func textInput(text: String) {
         firstdoitlabel.text = UserDefaults.standard.string(forKey: "doitlabel") ?? ""
         seconddoitlabel.text = UserDefaults.standard.string(forKey: "doitlabel2") ?? ""
         thriddoitlabel.text = UserDefaults.standard.string(forKey: "doitlabel3") ?? ""
-
+        
     }
 }
 
@@ -83,38 +81,43 @@ extension String {
 extension doitTableViewController {
     @objc func checkTapButton(_ sender: UIButton){
         firstdoitlabel.attributedText = firstdoitlabel.text?.strikeThrough()
-
-        }
     }
+}
 extension doitTableViewController {
-        @objc func checkTapButton2(_ sender: UIButton){
-            seconddoitlabel.attributedText = seconddoitlabel.text?.strikeThrough()
-        }
+    @objc func checkTapButton2(_ sender: UIButton){
+        seconddoitlabel.attributedText = seconddoitlabel.text?.strikeThrough()
+    }
+}
+extension doitTableViewController {
+    @objc func checkTapButton3(_ sender: UIButton){
+        thriddoitlabel.attributedText = seconddoitlabel.text?.strikeThrough()
+    }
 }
 extension doitTableViewController {
     @objc func deleteTapButton(_ sender: UIButton){
-        firstdoitlabel.text = ""
-        UserDefaults.standard.set("", forKey: "doitlabel")
-        seconddoitlabel.text = ""
-        UserDefaults.standard.set("", forKey: "doitlabel2")
-        thriddoitlabel.text = ""
-        UserDefaults.standard.set("", forKey: "doitlabel3")
-        
+        let alertController = UIAlertController(title: "전체삭제", message: "전체삭제 하시겠습니까?", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        let confirmAction = UIAlertAction(title: "확인", style: .default) { _ in
+            self.deleteText()
+        }
+        alertController.addAction(cancelAction)
+        alertController.addAction(confirmAction)
+        present(alertController, animated: true)
     }
 }
 
 extension doitTableViewController {
     private  func setUI() {
-        firstdoitlabel.text = load()
+        firstdoitlabel.text = UserDefaults.standard.string(forKey: "doitlabel") ?? ""
         firstdoitlabel.lineBreakMode = .byWordWrapping
         firstdoitlabel.numberOfLines = 0
         
         
-        seconddoitlabel.text = load()
+        seconddoitlabel.text = UserDefaults.standard.string(forKey: "doitlabel2") ?? ""
         seconddoitlabel.lineBreakMode = .byWordWrapping
         seconddoitlabel.numberOfLines = 0
         
-        thriddoitlabel.text = load()
+        thriddoitlabel.text = UserDefaults.standard.string(forKey: "doitlabel3") ?? ""
         thriddoitlabel.lineBreakMode = .byWordWrapping
         thriddoitlabel.numberOfLines = 0
         
@@ -135,10 +138,6 @@ extension doitTableViewController {
         view.addSubview(checkButton2)
         view.addSubview(deleteButton)
         
-        redimage.image = UIImage(named: "빨간동그라미")
-        blueimage.image = UIImage(named: "파랑동그라미")
-        redimage2.image = UIImage(named: "빨간동그라미")
-        blueimage2.image = UIImage(named: "파랑동그라미")
         redlineimage.image = UIImage(named: "빨간밑줄")
         bluelineimage.image = UIImage(named: "파란밑줄")
         redlineimage2.image = UIImage(named: "빨간밑줄")
@@ -150,35 +149,37 @@ extension doitTableViewController {
         doitTitle.text = "TO DO LIST"
         
         doitTitle.textColor = .darkGray
-           doitTitle.font = UIFont.boldSystemFont(ofSize: 30)
-      //  doitTitle.font = UIFont.PoorStory(type: .Bold, size: 50)
-        //doitTitle.font = UIFont.systemFont(ofSize: 24)
-        
-    
+        doitTitle.font = UIFont.boldSystemFont(ofSize: 30)
+     
         if let image = UIImage(named: "더하기") {
             self.doitPlusBarButton.setImage(image, for: .normal)
         }
         doitPlusBarButton.addTarget(self, action: #selector(didTapMemoPlus(_:)), for: .touchUpInside)
         
-        if let image2 = UIImage(named: "체크") {
-            self.checkButton.setImage(image2, for: .normal)
-            self.checkButton2.setImage(image2, for: .normal)
+        if let image2 = UIImage(named: "빨간동그라미") {
+            self.redimage.setImage(image2, for: .normal)
+            self.redimage2.setImage(image2, for: .normal)
         }
-        checkButton.addTarget(self, action: #selector(checkTapButton(_:)), for: .touchUpInside)
+        if let image3 = UIImage(named: "파랑동그라미"){
+            self.blueimage.setImage(image3, for: .normal)
+            self.blueimage2.setImage(image3, for: .normal)
+        }
         
-        checkButton2.addTarget(self, action: #selector(checkTapButton2(_:)), for: .touchUpInside)
+        redimage.addTarget(self, action: #selector(checkTapButton(_:)), for: .touchUpInside)
         
-        deleteButton.setTitle("삭제", for: .normal)
+        redimage2.addTarget(self, action: #selector(checkTapButton3(_:)), for: .touchUpInside)
+        blueimage.addTarget(self, action: #selector(checkTapButton2(_:)), for: .touchUpInside)
+        
+        deleteButton.setTitle("  전체삭제   ", for: .normal)
+        deleteButton.setTitleColor(.darkGray, for: .normal)
+        
         deleteButton.addTarget(self, action: #selector(deleteTapButton(_:)), for: .touchUpInside)
         firstdoitlabel.lineBreakMode = .byWordWrapping
         firstdoitlabel.numberOfLines = 0
         
-        
         firstdoitlabel.font = UIFont.boldSystemFont(ofSize: 15)
         seconddoitlabel.font = UIFont.boldSystemFont(ofSize: 15)
         thriddoitlabel.font = UIFont.boldSystemFont(ofSize: 15)
-        
-        
         
         doitTitle.translatesAutoresizingMaskIntoConstraints = false
         doitPlusBarButton.translatesAutoresizingMaskIntoConstraints = false
@@ -201,10 +202,10 @@ extension doitTableViewController {
             doitTitle.topAnchor.constraint(equalTo: view.topAnchor,constant: 150),
             doitTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            doitPlusBarButton.topAnchor.constraint(equalTo: view.topAnchor,constant: 150),
+            doitPlusBarButton.topAnchor.constraint(equalTo: view.topAnchor,constant: 100),
             doitPlusBarButton.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -30),
-            doitPlusBarButton.heightAnchor.constraint(equalToConstant: 40),
-            doitPlusBarButton.widthAnchor.constraint(equalToConstant: 40),
+            doitPlusBarButton.heightAnchor.constraint(equalToConstant: 30),
+            doitPlusBarButton.widthAnchor.constraint(equalToConstant: 30),
             
             firstdoitlabel.topAnchor.constraint(equalTo: view.topAnchor,constant: 200),
             firstdoitlabel.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 80),
@@ -273,10 +274,10 @@ extension doitTableViewController {
             checkButton2.heightAnchor.constraint(equalToConstant: 30),
             checkButton2.widthAnchor.constraint(equalToConstant: 30),
             
-            deleteButton.topAnchor.constraint(equalTo: blueimage2.topAnchor,constant: 100),
-            deleteButton.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 30),
+            deleteButton.topAnchor.constraint(equalTo: view.bottomAnchor,constant: -130),
+            deleteButton.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 150),
         ])
     }
-     
-  }
+    
+}
 

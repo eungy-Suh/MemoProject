@@ -13,7 +13,7 @@ protocol InputTextDelegate2: AnyObject {
 }
 
 class adddoitViewController: UIViewController {
-
+    
     let textField = UITextView()
     let button = UIButton(frame: CGRect(x: 100, y: 100, width: 50, height: 50))
     let label = UILabel()
@@ -90,7 +90,7 @@ extension adddoitViewController {
             
             button.topAnchor.constraint(equalTo: view.bottomAnchor,constant: -200),
             button.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        
+            
         ])
         
     }

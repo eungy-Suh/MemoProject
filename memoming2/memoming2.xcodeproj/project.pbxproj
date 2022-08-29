@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3035C5E128BC6F2C00552DCE /* SecretViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3035C5E028BC6F2C00552DCE /* SecretViewController.swift */; };
 		30EAF23F28B9CB640091B53D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EAF23E28B9CB640091B53D /* AppDelegate.swift */; };
 		30EAF24128B9CB640091B53D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EAF24028B9CB640091B53D /* SceneDelegate.swift */; };
 		30EAF24328B9CB640091B53D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EAF24228B9CB640091B53D /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3035C5E028BC6F2C00552DCE /* SecretViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretViewController.swift; sourceTree = "<group>"; };
 		30EAF23B28B9CB640091B53D /* memoming2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memoming2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30EAF23E28B9CB640091B53D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30EAF24028B9CB640091B53D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				30EAF25228B9CBA70091B53D /* addMemoViewController.swift */,
 				30EAF27C28B9F4C90091B53D /* adddoitViewController.swift */,
 				30EAF25428B9CBCD0091B53D /* doitTableViewController.swift */,
+				3035C5E028BC6F2C00552DCE /* SecretViewController.swift */,
 				30EAF24428B9CB640091B53D /* Main.storyboard */,
 				30EAF24728B9CB660091B53D /* Assets.xcassets */,
 				30EAF24928B9CB660091B53D /* LaunchScreen.storyboard */,
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30EAF25328B9CBA70091B53D /* addMemoViewController.swift in Sources */,
+				3035C5E128BC6F2C00552DCE /* SecretViewController.swift in Sources */,
 				30EAF24328B9CB640091B53D /* ViewController.swift in Sources */,
 				30EAF27D28B9F4CA0091B53D /* adddoitViewController.swift in Sources */,
 				30EAF23F28B9CB640091B53D /* AppDelegate.swift in Sources */,

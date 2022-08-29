@@ -12,7 +12,7 @@ protocol InputTextDelegate: AnyObject {
 }
 
 class addMemoViewController: UIViewController {
-
+    
     let textField = UITextView()
     let button = UIButton(frame: CGRect(x: 100, y: 100, width: 50, height: 50))
     let label = UILabel()
@@ -60,7 +60,7 @@ extension addMemoViewController {
         
         
         label.text = "이곳에 입력하세요😉"
-        label.font = UIFont(name: "KOTRA HOPE",size: 20)
+        label.font = UIFont(name: "KOTRA HOPE",size: 25)
         
         textField.layer.borderColor = UIColor.white.cgColor//테두리 만들기. bordercolor은 cgColor
         textField.layer.borderWidth = 2 //테두리 두께
@@ -92,7 +92,7 @@ extension addMemoViewController {
             
             button.topAnchor.constraint(equalTo: view.bottomAnchor,constant: -200),
             button.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        
+            
         ])
         
     }
