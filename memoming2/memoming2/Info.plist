@@ -4,9 +4,9 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>KOTRA HOPE.otf</string>
-		<string>CookieRun Black.ttf</string>
-		<string>CookieRun Bold.ttf</string>
+		<string>ACC어린이마음고운체.ttf</string>
+		<string>AlumniSansPinstripe-Italic.ttf</string>
+		<string>Pak_Yong_jun.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

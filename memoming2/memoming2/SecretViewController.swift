@@ -46,15 +46,15 @@ class SecretViewController: UIViewController {
             view.addSubview(trailLine)
             view.addSubview(bottonLine)
             
-            firstmemolabel.text = UserDefaults.standard.string(forKey: "label") ?? ""
+            firstmemolabel.text = ""
             firstmemolabel.font = UIFont.systemFont(ofSize: 18)
             firstmemolabel.isEditable = false
             
-            secondMemolabel.text = UserDefaults.standard.string(forKey: "label2") ?? ""
+            secondMemolabel.text = ""
             secondMemolabel.font = UIFont.systemFont(ofSize: 18)
             secondMemolabel.isEditable = false
             
-            thirdmemoLabel.text = UserDefaults.standard.string(forKey: "label3") ?? ""
+            thirdmemoLabel.text = ""
             thirdmemoLabel.font = UIFont.systemFont(ofSize: 18)
             thirdmemoLabel.isEditable = false
             

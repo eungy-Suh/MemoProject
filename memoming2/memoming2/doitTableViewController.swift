@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class doitTableViewController: UIViewController {
     let doitTitle = UILabel()
     let doitPlusBarButton = UIButton(type: .custom)
@@ -108,19 +109,7 @@ extension doitTableViewController {
 
 extension doitTableViewController {
     private  func setUI() {
-        firstdoitlabel.text = UserDefaults.standard.string(forKey: "doitlabel") ?? ""
-        firstdoitlabel.lineBreakMode = .byWordWrapping
-        firstdoitlabel.numberOfLines = 0
-        
-        
-        seconddoitlabel.text = UserDefaults.standard.string(forKey: "doitlabel2") ?? ""
-        seconddoitlabel.lineBreakMode = .byWordWrapping
-        seconddoitlabel.numberOfLines = 0
-        
-        thriddoitlabel.text = UserDefaults.standard.string(forKey: "doitlabel3") ?? ""
-        thriddoitlabel.lineBreakMode = .byWordWrapping
-        thriddoitlabel.numberOfLines = 0
-        
+
         view.addSubview(doitTitle)
         view.addSubview(doitPlusBarButton)
         view.addSubview(firstdoitlabel)
@@ -143,8 +132,6 @@ extension doitTableViewController {
         redlineimage2.image = UIImage(named: "빨간밑줄")
         bluelineimage2.image = UIImage(named: "파란밑줄")
         
-        firstdoitlabel.lineBreakMode = .byWordWrapping
-        firstdoitlabel.numberOfLines = 0
         
         doitTitle.text = "TO DO LIST"
         
@@ -164,6 +151,15 @@ extension doitTableViewController {
             self.blueimage.setImage(image3, for: .normal)
             self.blueimage2.setImage(image3, for: .normal)
         }
+        
+        firstdoitlabel.text = UserDefaults.standard.string(forKey: "doitlabel") ?? ""
+        firstdoitlabel.font = UIFont.systemFont(ofSize: 18)
+        
+        seconddoitlabel.text = UserDefaults.standard.string(forKey: "doitlabel2") ?? ""
+        seconddoitlabel.font = UIFont.systemFont(ofSize: 18)
+        
+        thriddoitlabel.text = UserDefaults.standard.string(forKey: "doitlabel3") ?? ""
+        thriddoitlabel.font = UIFont.systemFont(ofSize: 18)
         
         redimage.addTarget(self, action: #selector(checkTapButton(_:)), for: .touchUpInside)
         
@@ -280,4 +276,43 @@ extension doitTableViewController {
     }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

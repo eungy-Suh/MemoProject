@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3035C5E128BC6F2C00552DCE /* SecretViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3035C5E028BC6F2C00552DCE /* SecretViewController.swift */; };
+		3035C62A28BCD74A00552DCE /* AlumniSansPinstripe-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3035C62928BCD74A00552DCE /* AlumniSansPinstripe-Italic.ttf */; };
+		3035C62C28BCD87000552DCE /* Pak_Yong_jun.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3035C62B28BCD87000552DCE /* Pak_Yong_jun.ttf */; };
+		3035C62E28BD8EAA00552DCE /* ACC어린이마음고운체.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3035C62D28BD8EA900552DCE /* ACC어린이마음고운체.ttf */; };
 		30EAF23F28B9CB640091B53D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EAF23E28B9CB640091B53D /* AppDelegate.swift */; };
 		30EAF24128B9CB640091B53D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EAF24028B9CB640091B53D /* SceneDelegate.swift */; };
 		30EAF24328B9CB640091B53D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EAF24228B9CB640091B53D /* ViewController.swift */; };
@@ -17,11 +20,13 @@
 		30EAF25328B9CBA70091B53D /* addMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EAF25228B9CBA70091B53D /* addMemoViewController.swift */; };
 		30EAF25528B9CBCD0091B53D /* doitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EAF25428B9CBCD0091B53D /* doitTableViewController.swift */; };
 		30EAF27D28B9F4CA0091B53D /* adddoitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EAF27C28B9F4C90091B53D /* adddoitViewController.swift */; };
-		30EAF28128B9F6800091B53D /* 5. 코트라 희망체 in Resources */ = {isa = PBXBuildFile; fileRef = 30EAF28028B9F6800091B53D /* 5. 코트라 희망체 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3035C5E028BC6F2C00552DCE /* SecretViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretViewController.swift; sourceTree = "<group>"; };
+		3035C62928BCD74A00552DCE /* AlumniSansPinstripe-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlumniSansPinstripe-Italic.ttf"; sourceTree = "<group>"; };
+		3035C62B28BCD87000552DCE /* Pak_Yong_jun.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pak_Yong_jun.ttf; sourceTree = "<group>"; };
+		3035C62D28BD8EA900552DCE /* ACC어린이마음고운체.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ACC어린이마음고운체.ttf"; sourceTree = "<group>"; };
 		30EAF23B28B9CB640091B53D /* memoming2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memoming2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30EAF23E28B9CB640091B53D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30EAF24028B9CB640091B53D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,7 +38,6 @@
 		30EAF25228B9CBA70091B53D /* addMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addMemoViewController.swift; sourceTree = "<group>"; };
 		30EAF25428B9CBCD0091B53D /* doitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doitTableViewController.swift; sourceTree = "<group>"; };
 		30EAF27C28B9F4C90091B53D /* adddoitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adddoitViewController.swift; sourceTree = "<group>"; };
-		30EAF28028B9F6800091B53D /* 5. 코트라 희망체 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "5. 코트라 희망체"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3035C62828BCD73600552DCE /* font */ = {
+			isa = PBXGroup;
+			children = (
+				3035C62928BCD74A00552DCE /* AlumniSansPinstripe-Italic.ttf */,
+				3035C62B28BCD87000552DCE /* Pak_Yong_jun.ttf */,
+				3035C62D28BD8EA900552DCE /* ACC어린이마음고운체.ttf */,
+			);
+			name = font;
+			sourceTree = "<group>";
+		};
 		30EAF23228B9CB640091B53D = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +80,7 @@
 		30EAF23D28B9CB640091B53D /* memoming2 */ = {
 			isa = PBXGroup;
 			children = (
+				3035C62828BCD73600552DCE /* font */,
 				30EAF23E28B9CB640091B53D /* AppDelegate.swift */,
 				30EAF24028B9CB640091B53D /* SceneDelegate.swift */,
 				30EAF24228B9CB640091B53D /* ViewController.swift */,
@@ -77,7 +92,6 @@
 				30EAF24728B9CB660091B53D /* Assets.xcassets */,
 				30EAF24928B9CB660091B53D /* LaunchScreen.storyboard */,
 				30EAF24C28B9CB660091B53D /* Info.plist */,
-				30EAF28028B9F6800091B53D /* 5. 코트라 희망체 */,
 			);
 			path = memoming2;
 			sourceTree = "<group>";
@@ -142,8 +156,10 @@
 			files = (
 				30EAF24B28B9CB660091B53D /* LaunchScreen.storyboard in Resources */,
 				30EAF24828B9CB660091B53D /* Assets.xcassets in Resources */,
+				3035C62C28BCD87000552DCE /* Pak_Yong_jun.ttf in Resources */,
+				3035C62A28BCD74A00552DCE /* AlumniSansPinstripe-Italic.ttf in Resources */,
 				30EAF24628B9CB640091B53D /* Main.storyboard in Resources */,
-				30EAF28128B9F6800091B53D /* 5. 코트라 희망체 in Resources */,
+				3035C62E28BD8EAA00552DCE /* ACC어린이마음고운체.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

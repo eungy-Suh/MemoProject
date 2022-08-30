@@ -60,7 +60,7 @@ extension addMemoViewController {
         
         
         label.text = "이곳에 입력하세요😉"
-        label.font = UIFont(name: "KOTRA HOPE",size: 25)
+        label.font = UIFont(name: "ACC어린이마음고운체", size: 30)
         
         textField.layer.borderColor = UIColor.white.cgColor//테두리 만들기. bordercolor은 cgColor
         textField.layer.borderWidth = 2 //테두리 두께

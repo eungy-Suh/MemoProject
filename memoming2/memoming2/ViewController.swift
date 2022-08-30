@@ -33,17 +33,13 @@ class ViewController: UIViewController {
 extension ViewController {
     private  func save(text: String) {
         UserDefaults.standard.set(text, forKey: "label")
-        
     }
     func save2(text: String) {
         UserDefaults.standard.set(text, forKey: "label2")
-        
     }
     func save3(text: String) {
         UserDefaults.standard.set(text, forKey: "label3")
-        
     }
-    
     private  func load() -> String {
         let text = UserDefaults.standard.string(forKey: "label") ?? ""
         return text
@@ -85,11 +81,14 @@ extension ViewController {
     }
 }
 extension ViewController {
-    @objc func editTapButton(_ sender: UIButton){
-        firstmemolabel.isEditable = true
-        firstmemolabel.tintColor = UIColor.clear
-
-    
+    @objc func editTapButton(_ sender: UIButton) {
+        if firstmemolabel.isEditable == true {
+            firstmemolabel.isEditable = false
+        } else {
+            firstmemolabel.isEditable = true
+            firstmemolabel.becomeFirstResponder()
+            //firstmemolabel.tintColor = UIColor.clear
+        }
     }
 }
 extension ViewController {
@@ -124,27 +123,21 @@ extension ViewController {
         view.addSubview(deleteButton2)
         view.addSubview(deleteButton3)
         
-        
         firstmemolabel.text = UserDefaults.standard.string(forKey: "label") ?? ""
         firstmemolabel.font = UIFont.systemFont(ofSize: 18)
         firstmemolabel.isEditable = false
-        
         
         secondMemolabel.text = UserDefaults.standard.string(forKey: "label2") ?? ""
         secondMemolabel.font = UIFont.systemFont(ofSize: 18)
         secondMemolabel.isEditable = false
         
-        
         thirdmemoLabel.text = UserDefaults.standard.string(forKey: "label3") ?? ""
         thirdmemoLabel.font = UIFont.systemFont(ofSize: 18)
         thirdmemoLabel.isEditable = false
         
-        
         memoTitle.text = "SIMPLE MEMO"
         memoTitle.textColor = .darkGray
         memoTitle.font = UIFont.boldSystemFont(ofSize: 30)
-        
-        
         
         if let image = UIImage(named: "더하기") {
             self.memoPlusBarButton.setImage(image, for: .normal)
@@ -154,7 +147,6 @@ extension ViewController {
         allDeleteButton.setTitle("  전체삭제   ", for: .normal)
         allDeleteButton.setTitleColor(.darkGray, for: .normal)
         allDeleteButton.addTarget(self, action: #selector(didTapdeleteButton(_:)), for: .touchUpInside)
-        
         
         firstmemolabel.backgroundColor = .systemGray4
         secondMemolabel.backgroundColor = .systemGray5
